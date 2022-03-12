@@ -1,11 +1,15 @@
+# Keep Alive Jupyter
 Forked from [wjladams/com.bill.jupyter.plist](https://gist.github.com/wjladams/71c03cf11f299694dce8e9eebed5ef4b)
 
-# Steps
+## Install to LaunchAgents (Run at login)
+```zsh
+ln -s $(pwd)/com.bill.jupyter.plist ~/Library/LaunchAgents/com.bill.jupyter.plist
+launchctl load ~/Library/LaunchAgents/com.bill.jupyter.plist
+```
 
-1. Save com.bill.jupyter.plist to ~/Library/LaunchAgents
-2. Edit the file and replace USERNAME with your username
-3. In a terminal in the ~/Library/LaunchAgents directory run
-launchctl load com.bill.jupyter.plist
+if you modify the plist, use `cp` instead of `ln -s`.
 
-And that should do it, it is setup as Login launch item
-
+## Install from LaunchAgents
+```zsh
+launchctl unload ~/Library/LaunchAgents/com.bill.jupyter.plist
+```
